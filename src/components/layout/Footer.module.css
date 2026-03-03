@@ -1,0 +1,112 @@
+.footer {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-8);
+    border-top: 1px solid color-mix(in srgb, var(--text-primary) 5%, transparent);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.topSection {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    margin-bottom: var(--space-16);
+}
+
+@media (min-width: 768px) {
+    .topSection {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.brandInfo {
+    max-width: 320px;
+}
+
+.logo {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: var(--text-primary);
+    text-decoration: none;
+    margin-bottom: var(--space-4);
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.description {
+    color: color-mix(in srgb, var(--text-primary) 60%, transparent);
+    line-height: 1.6;
+}
+
+.linksGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+}
+
+@media (min-width: 640px) {
+    .linksGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.linkGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.linkTitle {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.link {
+    color: color-mix(in srgb, var(--text-primary) 60%, transparent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: var(--text-primary);
+}
+
+.socialLinks {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.socialLinks a {
+    color: color-mix(in srgb, var(--text-primary) 60%, transparent);
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialLinks a:hover {
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.bottomSection {
+    border-top: 1px solid color-mix(in srgb, var(--text-primary) 10%, transparent);
+    padding-top: var(--space-8);
+    text-align: center;
+    color: color-mix(in srgb, var(--text-primary) 40%, transparent);
+    font-size: 0.875rem;
+}

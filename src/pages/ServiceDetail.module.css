@@ -1,0 +1,207 @@
+.detailPage {
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: var(--space-24);
+    color: var(--text-primary);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+/* SECTION 1: HERO */
+.heroSection {
+    margin-bottom: var(--space-24);
+    text-align: center;
+}
+
+.label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--text-primary) 50%, transparent);
+    margin-bottom: var(--space-6);
+    border: 1px solid color-mix(in srgb, var(--text-primary) 10%, transparent);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+}
+
+.title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+    color: var(--text-primary);
+}
+
+.heroSub {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    color: color-mix(in srgb, var(--text-primary) 70%, transparent);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* SECTION 2: WHAT WE DELIVER */
+.deliverSection {
+    margin-bottom: var(--space-24);
+    padding-top: var(--space-16);
+    border-top: 1px solid color-mix(in srgb, var(--text-primary) 10%, transparent);
+}
+
+.sectionHeader {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: var(--space-8);
+    color: var(--text-primary);
+}
+
+.deliverText {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: color-mix(in srgb, var(--text-primary) 80%, transparent);
+    max-width: 800px;
+}
+
+/* SECTION 3: CAPABILITIES */
+.capabilitiesSection {
+    margin-bottom: var(--space-24);
+}
+
+.capGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .capGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.capItem {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    background: color-mix(in srgb, var(--text-primary) 2%, transparent);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border: 1px solid color-mix(in srgb, var(--text-primary) 5%, transparent);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.capItem:hover {
+    transform: translateX(10px);
+    border-color: color-mix(in srgb, var(--text-primary) 15%, transparent);
+}
+
+.capIconWrapper {
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--text-primary) 5%, transparent);
+    padding: var(--space-3);
+    border-radius: 50%;
+}
+
+.capText {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+/* SECTION 4: PROCESS */
+.processSection {
+    margin-bottom: var(--space-24);
+}
+
+.processSteps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .processSteps {
+        flex-direction: row;
+        gap: var(--space-4);
+        justify-content: space-between;
+    }
+}
+
+.processStep {
+    flex: 1;
+    position: relative;
+    padding: var(--space-6);
+    background: var(--surface-secondary);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--surface-border);
+}
+
+.stepNumber {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 800;
+    color: color-mix(in srgb, var(--text-primary) 10%, transparent);
+    line-height: 1;
+    margin-bottom: var(--space-4);
+}
+
+.stepTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+}
+
+/* SECTION 5: TECHNOLOGY STACK */
+.techSection {
+    margin-bottom: var(--space-24);
+}
+
+.techList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.techItem {
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-full);
+    background: color-mix(in srgb, var(--text-primary) 3%, transparent);
+    border: 1px solid color-mix(in srgb, var(--text-primary) 8%, transparent);
+    font-weight: 500;
+    font-size: 1rem;
+    color: color-mix(in srgb, var(--text-primary) 70%, transparent);
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+.techItem:hover {
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--text-primary) 8%, transparent);
+}
+
+/* SECTION 6: FINAL CTA */
+.ctaSection {
+    text-align: center;
+    padding: var(--space-16) 0;
+    background: color-mix(in srgb, var(--text-primary) 3%, transparent);
+    border-radius: var(--radius-2xl);
+    border: 1px solid color-mix(in srgb, var(--text-primary) 5%, transparent);
+}
+
+.ctaTitle {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-8);
+    color: var(--text-primary);
+}
+
+.ctaButtonWrapper {
+    display: inline-block;
+}

@@ -1,0 +1,168 @@
+.heroContainer {
+    position: relative;
+    height: 100dvh;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--bg-inverse);
+    /* Dark background while video is loading */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+}
+
+.videoWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-base);
+    will-change: transform, filter;
+    /* Add subtle scale to ensure the vignette fully covers edges */
+    transform: scale(1.05);
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.loadingSkeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    z-index: -1;
+}
+
+/* Subtle overlay to blend the video into the black background naturally (vignette effect) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 1;
+}
+
+.contentOverlay {
+    position: relative;
+    z-index: var(--z-above);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 var(--space-6);
+    color: #ffffff;
+    pointer-events: none;
+    /* Let the container capture mouse events */
+}
+
+/* Re-enable pointer events for interactive elements */
+.contentOverlay * {
+    pointer-events: auto;
+}
+
+.textContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-8);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.studioName {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 0;
+    will-change: transform;
+    /* 3D Glass / Neon Glow Text Effect */
+    text-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.1),
+        0 0 40px rgba(255, 255, 255, 0.05);
+}
+
+.ctaWrapper {
+    margin-top: 60dvh;
+    will-change: transform;
+    transform-style: preserve-3d;
+}
+
+@media (min-width: 768px) {
+    .ctaWrapper {
+        margin-top: 83dvh;
+    }
+}
+
+/* Advanced 3D flair for the button within this context */
+.ctaButton {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    color: #000000 !important;
+    /* Changed to black as requested */
+    overflow: visible !important;
+    position: relative;
+    padding: var(--space-4) var(--space-8) !important;
+    letter-spacing: 0.2em !important;
+    text-shadow: none !important;
+    /* Removed white text-shadow for black text */
+}
+
+/* Outer premium 3D glow */
+.ctaButton::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+}
+
+.ctaButton:hover {
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(255, 255, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 0 30px rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    color: #000000 !important;
+}
+
+.ctaButton:hover::before {
+    opacity: 1;
+}
